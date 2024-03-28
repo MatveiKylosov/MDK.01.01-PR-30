@@ -5,12 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MDK._01._01_PR_30"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <!--Main: #9966CC-->
-    <!--Secondary: #F7F4FB-->
-    <!--Accent: #4752C2-->
+        Title="MainWindow" Height="470" Width="800" MinHeight="470" MinWidth="800">
+    <!--Main: #5e69ee-->
+    <!--Secondary: #F4F4FB-->
+    <!--Accent: #39AFEA-->
 
-    <Grid Background="#9966CC">
+    <Grid Background="#5e69ee">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125px"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <Border Background="#F4F4FB" Margin="15" CornerRadius="20" Grid.Row="1" Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="80px"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="10,15,10,10">
+                    <Button Height="50" Width="50" Margin="5" Click="CarBrandsOpenClick"    Background="#39AFEA"/>
+                    <Button Height="50" Width="50" Margin="5" Click="CarsClick"             Background="#39AFEA"/>
+                    <Button Height="50" Width="50" Margin="5" Click="CustomersClick"        Background="#39AFEA"/>
+                    <Button Height="50" Width="50" Margin="5" Click="SalesClick"            Background="#39AFEA"/>
+                    <Button Height="50" Width="50" Margin="5" Click="StaffClick"            Background="#39AFEA"/>
+                </StackPanel>
+
+                <Button  Grid.Row="1" Margin="10,0,10,15" Height="50" Width="50" Background="#39AFEA" >
+                    <Image Source="Icon/admin.png"/>
+                </Button>
+            </Grid>
+        </Border>
+
+        <ScrollViewer  Grid.Column="1" Margin="15,15,30,15" VerticalScrollBarVisibility="Hidden">
+            <StackPanel x:Name="ElementsPanel" Orientation="Vertical" />
+        </ScrollViewer>
     </Grid>
 </Window>

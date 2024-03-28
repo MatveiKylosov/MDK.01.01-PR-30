@@ -107,6 +107,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Elements\CarBrands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\Cars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\Customers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\Sales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,6 +141,21 @@
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\Sales.cs" />
     <Compile Include="Classes\Staff.cs" />
+    <Compile Include="Elements\CarBrands.xaml.cs">
+      <DependentUpon>CarBrands.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\Cars.xaml.cs">
+      <DependentUpon>Cars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\Customers.xaml.cs">
+      <DependentUpon>Customers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\Sales.xaml.cs">
+      <DependentUpon>Sales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\Staff.xaml.cs">
+      <DependentUpon>Staff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -154,6 +189,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Icon\admin.png" />
+    <Resource Include="Icon\brand.png" />
     <Content Include="SQL queries\Create Table.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

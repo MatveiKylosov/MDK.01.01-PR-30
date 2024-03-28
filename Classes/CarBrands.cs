@@ -22,6 +22,7 @@ namespace MDK._01._01_PR_30.Classes
 
                 using (MySqlConnection connection = Connection.GetConnection())
                 {
+                    //Обрабатывать это!!!!!!!!!!
                     connection.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM CarBrands", connection);
                     using (MySqlDataReader reader = cmd.ExecuteReader())

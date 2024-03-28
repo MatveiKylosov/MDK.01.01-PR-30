@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Pqc.Crypto.Falcon;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,17 +21,57 @@ namespace MDK._01._01_PR_30
     /// </summary>
     public partial class MainWindow : Window
     {
+        static public MainWindow main;
+        public List<Classes.CarBrands> carBrands;
+        public List<Classes.Cars> cars;
+        public List<Classes.Customers> customers;
+        public List<Classes.Employees> employees;
+        public List<Classes.Sales> sales;
+        bool admin = true;
+
         public MainWindow()
         {
             InitializeComponent();
-            
-            List<Classes.CarBrands> carBrands = Classes.CarBrands.GetAll;
-            List<Classes.Cars> cars = Classes.Cars.GetAll;
-            List<Classes.Customers> customers = Classes.Customers.GetAll;
-            List<Classes.Employees> employees = Classes.Employees.GetAll;
-            List<Classes.Sales> sales = Classes.Sales.GetAll;
+            main = this;
 
-            MessageBox.Show($"{carBrands.Count}\n{cars.Count}\n{customers.Count}\n{employees.Count}\n{sales.Count}");
+            UpdateDate();
+        }
+
+        void UpdateDate()
+        {
+            carBrands = Classes.CarBrands.GetAll;
+            cars = Classes.Cars.GetAll;
+            customers = Classes.Customers.GetAll;
+            employees = Classes.Employees.GetAll;
+            sales = Classes.Sales.GetAll;
+        }
+
+        private void CarBrandsOpenClick(object sender, RoutedEventArgs e)
+        {
+            carBrands = Classes.CarBrands.GetAll;
+            ElementsPanel.Children.Clear();
+            foreach(var x in carBrands)
+                ElementsPanel.Children.Add(new Elements.CarBrands(x, admin));
+        }
+
+        private void CarsClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CustomersClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SalesClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StaffClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
