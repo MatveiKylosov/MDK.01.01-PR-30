@@ -23,6 +23,14 @@ namespace MDK._01._01_PR_30
         public MainWindow()
         {
             InitializeComponent();
+            
+            List<Classes.CarBrands> carBrands = Classes.CarBrands.GetAll;
+            List<Classes.Cars> cars = Classes.Cars.GetAll;
+            List<Classes.Customers> customers = Classes.Customers.GetAll;
+            List<Classes.Employees> employees = Classes.Employees.GetAll;
+            List<Classes.Sales> sales = Classes.Sales.GetAll;
+
+            MessageBox.Show($"{carBrands.Count}\n{cars.Count}\n{customers.Count}\n{employees.Count}\n{sales.Count}");
         }
     }
 }

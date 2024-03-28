@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:MDK._01._01_PR_30"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <!--Main: #9966CC-->
+    <!--Secondary: #F7F4FB-->
+    <!--Accent: #4752C2-->
+
+    <Grid Background="#9966CC">
+
     </Grid>
 </Window>
