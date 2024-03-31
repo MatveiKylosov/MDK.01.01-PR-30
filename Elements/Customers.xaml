@@ -4,9 +4,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MDK._01._01_PR_30.Elements"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             mc:Ignorable="d" MaxWidth="800px">
+    <Border Background="#F4F4FB" CornerRadius="20" Margin="0,0,0,30">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="60px" x:Name="ButtonRow"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Margin="15,15,15,20">
+                <TextBlock Text="Полное имя:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="FullName" IsEnabled="False"/>
+
+                <TextBlock Text="Паспортные данные:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="PassportDetails" IsEnabled="False"/>
+
+                <TextBlock Text="Адрес:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="Address" IsEnabled="False"/>
+
+                <TextBlock Text="Город:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="City" IsEnabled="False"/>
+
+                <TextBlock Text="Дата рождения:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="DateOfBirth" IsEnabled="False"/>
+
+                <TextBlock Text="Пол:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <GroupBox x:Name="Gender" IsEnabled="False">
+                    <StackPanel>
+                        <RadioButton x:Name="Man" Content="Мужской"/>
+                        <RadioButton x:Name="Woman" Content="Женский"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="15,5,15,10" HorizontalAlignment="Center">
+                <Button Background="#39AFEA" Foreground="#F4F4FB" Content="Изменить" Width="80px" Margin="0,0,5,0" Click="CreateEdit_Click" x:Name="CreateEditButton"/>
+                <Button Background="#39AFEA" Foreground="#F4F4FB" Content="Удалить"  Width="80px" Margin="0,0,5,0" Click="CancelRemove_Click" x:Name="CancelRemoveButton"/>
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>

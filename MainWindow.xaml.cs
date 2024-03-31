@@ -79,7 +79,17 @@ namespace MDK._01._01_PR_30
 
         public void CustomersClick(object sender, RoutedEventArgs e)
         {
+            customers = Classes.Customers.GetAll;
+            ElementsPanel.Children.Clear();
 
+            if (customers == null)
+                MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                ElementsPanel.Children.Add(new Elements.Customers(null, admin));
+                foreach (var x in customers)
+                    ElementsPanel.Children.Add(new Elements.Customers(x, admin));
+            }
         }
 
         public void SalesClick(object sender, RoutedEventArgs e)

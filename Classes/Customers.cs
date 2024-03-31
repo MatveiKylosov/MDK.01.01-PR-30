@@ -77,11 +77,10 @@ namespace MDK._01._01_PR_30.Classes
             return Connection.ExecuteNonQuery("UPDATE Customers SET FullName = @FullName, PassportDetails = @PassportDetails, Address = @Address, city = @city, DateOfBirth = @DateOfBirth, Gender = @Gender WHERE CustomersID = @CustomersID", parameters);
         }
 
-        public bool Insert(string FullName, string PassportDetails, string Address, string city, DateTime DateOfBirth, bool Genders)
+        static public bool Insert(string FullName, string PassportDetails, string Address, string city, DateTime DateOfBirth, bool Gender)
         {
             var parameters = new Dictionary<string, object>
             {
-                {"@CustomersID", CustomersID},
                 {"@FullName", FullName},
                 {"@PassportDetails", PassportDetails},
                 {"@Address", Address},
@@ -89,7 +88,7 @@ namespace MDK._01._01_PR_30.Classes
                 {"@DateOfBirth", DateOfBirth},
                 {"@Gender", Gender}
             };
-            return Connection.ExecuteNonQuery("INSERT INTO Customers (CustomersID, FullName, PassportDetails, Address, city, DateOfBirth, Gender) VALUSE (@CustomersID, @FullName, @PassportDetails, @Address, @city, @DateOfBirth, @Gender)", parameters);
+            return Connection.ExecuteNonQuery("INSERT INTO Customers (FullName, PassportDetails, Address, city, DateOfBirth, Gender) VALUES (@FullName, @PassportDetails, @Address, @city, @DateOfBirth, @Gender)", parameters);
         }
 
         public bool Delete()
