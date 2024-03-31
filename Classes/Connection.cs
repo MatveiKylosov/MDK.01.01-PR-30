@@ -9,7 +9,11 @@ namespace MDK._01._01_PR_30.Classes
 {
     public class Connection
     {
+#if true
         static readonly string connectionString = "Server=127.0.0.1;Database=CarsBase;Uid=root;Pwd=;";
+#else
+        static readonly string connectionString = "Server=student.permaviat.ru;Database=ISP_21_2_10;Uid=ISP_21_2_10;Pwd=DSFV988Np#;";
+#endif
 
         public static MySqlConnection GetConnection()
         {

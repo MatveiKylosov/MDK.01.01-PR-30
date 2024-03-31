@@ -9,7 +9,7 @@ namespace MDK._01._01_PR_30.Classes
 {
     public class CarBrands
     {
-        public string BrandName;
+        public string BrandName { get; set; }
         public string CountryOrigin;
         public string ManufacturerFactory;
         public string Address;
@@ -22,8 +22,9 @@ namespace MDK._01._01_PR_30.Classes
 
                 using (MySqlConnection connection = Connection.GetConnection())
                 {
-                    //Обрабатывать это!!!!!!!!!!
-                    connection.Open();
+                    try { connection.Open(); }
+                    catch { return null; }
+
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM CarBrands", connection);
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -52,7 +53,7 @@ namespace MDK._01._01_PR_30.Classes
             this.ManufacturerFactory = ManufacturerFactory;
             this.Address = Address;
         }
-    
+
         public bool Update(string BrandName, string CountryOrigin, string ManufacturerFactory, string Address)
         {
             var parameters = new Dictionary<string, object>
@@ -65,7 +66,7 @@ namespace MDK._01._01_PR_30.Classes
             return Connection.ExecuteNonQuery("UPDATE CarBrands SET BrandName = @BrandName, CountryOrigin = @CountryOrigin, ManufacturerFactory = @ManufacturerFactory, Address = @Address WHERE BrandName = @BrandName", parameters);
         }
 
-        public bool Insert(string BrandName, string CountryOrigin, string ManufacturerFactory, string Address)
+        static public bool Insert(string BrandName, string CountryOrigin, string ManufacturerFactory, string Address)
         {
             var parameters = new Dictionary<string, object>
             {

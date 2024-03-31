@@ -28,10 +28,10 @@ namespace MDK._01._01_PR_30.Elements
             InitializeComponent();
             this.carBrands = carBrands;
 
-            if(!admin) 
+            if (!admin)
                 ButtonRow.Height = new GridLength(0);
 
-            if(carBrands != null)
+            if (carBrands != null)
             {
                 BrandName.Text = carBrands.BrandName;
                 CountryOrigin.Text = carBrands.CountryOrigin;
@@ -40,6 +40,8 @@ namespace MDK._01._01_PR_30.Elements
             }
             else
             {
+                edit = true;
+                BrandName.IsEnabled = CountryOrigin.IsEnabled = ManufacturerFactory.IsEnabled = Address.IsEnabled = true;
                 CreateEditButton.Content = "Добавить";
                 CancelRemoveButton.Content = "Отменить";
             }
@@ -52,16 +54,18 @@ namespace MDK._01._01_PR_30.Elements
 
             if (carBrands != null)
             {
-                MessageBox.Show(BrandName.Text);
                 if (carBrands.Update(BrandName.Text, CountryOrigin.Text, ManufacturerFactory.Text, Address.Text))
-                    MessageBox.Show("Данные были успешно обновлены!", "Внимание!",MessageBoxButton.OK, MessageBoxImage.Information);
-                else 
+                    MessageBox.Show("Данные были успешно обновлены!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
                     MessageBox.Show("В текущий момент база данных не доступна.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                if (carBrands.Insert(BrandName.Text, CountryOrigin.Text, ManufacturerFactory.Text, Address.Text))
+                if (Classes.CarBrands.Insert(BrandName.Text, CountryOrigin.Text, ManufacturerFactory.Text, Address.Text))
+                {
+                    MainWindow.main.CarBrandsOpenClick(null, null);
                     MessageBox.Show("Данные были успешно добавлены!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
                 else
                     MessageBox.Show("В текущий момент база данных не доступна.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -71,13 +75,13 @@ namespace MDK._01._01_PR_30.Elements
         {
             if (edit)
             {
-                if(MainWindow.main.cars.Any(x => x.Stamp == this.carBrands.BrandName))
+                if (carBrands != null && MainWindow.main.cars.Any(x => x.Stamp == this.carBrands.BrandName))
                 {
                     MessageBox.Show("Эта запись используется в других таблицах!\nЧтобы изменить название бреда удалите записи из других таблиц, где используется эта запись.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
 
-                if(string.IsNullOrEmpty(BrandName.Text) || BrandName.Text.Length > 50)
+                if (string.IsNullOrEmpty(BrandName.Text) || BrandName.Text.Length > 50)
                 {
                     MessageBox.Show("Название бренда должно быть больше 0 и меньше 50 символов!", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
@@ -115,12 +119,38 @@ namespace MDK._01._01_PR_30.Elements
                 edit = true;
 
                 return false;
-            } 
+            }
         }
 
         private void CancelRemove_Click(object sender, RoutedEventArgs e)
         {
+            if (edit)
+            {
+                if (carBrands != null)
+                {
+                    BrandName.Text = carBrands.BrandName;
+                    CountryOrigin.Text = carBrands.CountryOrigin;
+                    ManufacturerFactory.Text = carBrands.ManufacturerFactory;
+                    Address.Text = carBrands.Address;
+                    CancelRemoveButton.Content = (carBrands != null ? "Удалить" : "Стереть");
 
+                    BrandName.IsEnabled = CountryOrigin.IsEnabled = ManufacturerFactory.IsEnabled = Address.IsEnabled = false;
+                    edit = false;
+                }
+                else
+                    BrandName.Text = CountryOrigin.Text = ManufacturerFactory.Text = Address.Text = "";
+            }
+            else
+            {
+                if (MainWindow.main.cars.Any(x => x.Stamp == this.carBrands.BrandName))
+                {
+                    MessageBox.Show("Эта запись используется в других таблицах!\nЧтобы удалить эту запись сначала удалите записи из других таблиц, где используется эта запись.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                carBrands.Delete();
+                MainWindow.main.CarBrandsOpenClick(null, null);
+            }
         }
     }
 }

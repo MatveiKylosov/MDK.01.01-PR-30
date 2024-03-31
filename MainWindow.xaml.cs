@@ -46,30 +46,48 @@ namespace MDK._01._01_PR_30
             sales = Classes.Sales.GetAll;
         }
 
-        private void CarBrandsOpenClick(object sender, RoutedEventArgs e)
+        public void CarBrandsOpenClick(object sender, RoutedEventArgs e)
         {
             carBrands = Classes.CarBrands.GetAll;
             ElementsPanel.Children.Clear();
-            foreach(var x in carBrands)
-                ElementsPanel.Children.Add(new Elements.CarBrands(x, admin));
+
+            if(carBrands == null)
+                MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);        
+            else
+            {
+                ElementsPanel.Children.Add(new Elements.CarBrands(null, admin));
+                foreach (var x in carBrands)
+                    ElementsPanel.Children.Add(new Elements.CarBrands(x, admin));
+            }
         }
 
-        private void CarsClick(object sender, RoutedEventArgs e)
+        public void CarsClick(object sender, RoutedEventArgs e)
+        {
+            cars = Classes.Cars.GetAll;
+            carBrands = Classes.CarBrands.GetAll;
+            ElementsPanel.Children.Clear();
+
+            if(cars == null)
+                MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                ElementsPanel.Children.Add(new Elements.Cars(null, admin));
+                foreach (var x in cars)
+                    ElementsPanel.Children.Add(new Elements.Cars(x, admin));
+            }
+        }
+
+        public void CustomersClick(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void CustomersClick(object sender, RoutedEventArgs e)
+        public void SalesClick(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void SalesClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StaffClick(object sender, RoutedEventArgs e)
+        public void StaffClick(object sender, RoutedEventArgs e)
         {
 
         }

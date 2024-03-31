@@ -4,9 +4,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MDK._01._01_PR_30.Elements"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             mc:Ignorable="d" MaxWidth="800px">
+    <Border Background="#F4F4FB" CornerRadius="20" Margin="0,0,0,30">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="60px" x:Name="ButtonRow"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Margin="15,15,15,20">
+                <TextBlock Text="Название:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="Name" IsEnabled="False"/>
+
+                <TextBlock Text="Марка:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <ComboBox Margin="0,5,0,0" x:Name="Stamp" IsEnabled="False"/>
+
+                <TextBlock Text="Год производства:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="YearProduction" IsEnabled="False"/>
+
+                <TextBlock Text="Цвет:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="Colour" IsEnabled="False"/>
+
+                <TextBlock Text="Категория:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="Category" IsEnabled="False"/>
+
+                <TextBlock Text="Цена:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="Price" IsEnabled="False"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="15,5,15,10" HorizontalAlignment="Center">
+                <Button Background="#39AFEA" Foreground="#F4F4FB" Content="Изменить" Width="80px" Margin="0,0,5,0" Click="CreateEdit_Click" x:Name="CreateEditButton"/>
+                <Button Background="#39AFEA" Foreground="#F4F4FB" Content="Удалить"  Width="80px" Margin="0,0,5,0" Click="CancelRemove_Click" x:Name="CancelRemoveButton"/>
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>

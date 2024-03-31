@@ -25,7 +25,8 @@ namespace MDK._01._01_PR_30.Classes
 
                 using (MySqlConnection connection = Connection.GetConnection())
                 {
-                    connection.Open();
+                    try { connection.Open(); }
+                    catch { return null; }
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM Cars", connection);
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -77,11 +78,10 @@ namespace MDK._01._01_PR_30.Classes
             return Connection.ExecuteNonQuery("UPDATE Cars SET CarID = @CarID, Name = @Name, Stamp = @Stamp, YearProduction = @YearProduction, Colour = @Colour, Category = @Category, Price = @Price WHERE CarID = @CarID", parameters);
         }
 
-        public bool Insert(string Name, string Stamp, int YearProduction, string Colour, string Category, decimal Price)
+        static public bool Insert(string Name, string Stamp, int YearProduction, string Colour, string Category, decimal Price)
         {
             var parameters = new Dictionary<string, object>
             {
-                {"@CarID", this.CarID},
                 {"@Name", Name},
                 {"@Stamp", Stamp},
                 {"@YearProduction", YearProduction},
@@ -89,7 +89,7 @@ namespace MDK._01._01_PR_30.Classes
                 {"@Category", Category},
                 {"@Price", Price}
             };
-            return Connection.ExecuteNonQuery("INSERT INTO Car (CarID, Name, Stamp, YearProduction, Colour, Category, Price) VALUSE (@CarID, @Name, @Stamp, @YearProduction, @Colour, @Category, @Price)", parameters);
+            return Connection.ExecuteNonQuery("INSERT INTO Cars (Name, Stamp, YearProduction, Colour, Category, Price) VALUES (@Name, @Stamp, @YearProduction, @Colour, @Category, @Price)", parameters);
         }
 
         public bool Delete()
