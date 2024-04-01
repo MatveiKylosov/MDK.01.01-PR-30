@@ -97,7 +97,7 @@ namespace MDK._01._01_PR_30
 
         }
 
-        public void StaffClick(object sender, RoutedEventArgs e)
+        public void EmployeesClick(object sender, RoutedEventArgs e)
         {
 
         }

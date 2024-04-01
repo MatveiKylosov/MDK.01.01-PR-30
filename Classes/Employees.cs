@@ -65,11 +65,10 @@ namespace MDK._01._01_PR_30.Classes
             return Connection.ExecuteNonQuery("UPDATE Employees SET EmployeeID = @EmployeeID, FullName = @FullName, Experience = @Experience, Salary = @Salary WHERE EmployeeID = @EmployeeID", parameters);
         }
 
-        public bool Insert(string FullName, int Experience, decimal Salary)
+        static public bool Insert(string FullName, int Experience, decimal Salary)
         {
             var parameters = new Dictionary<string, object>
             {
-                {"@EmployeeID", this.EmployeeID},
                 {"@FullName", FullName},
                 {"@Experience", Experience},
                 {"@Salary", Salary}

@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="MDK._01._01_PR_30.Elements.Sales"
+﻿<UserControl x:Class="MDK._01._01_PR_30.Elements.Employees"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MDK._01._01_PR_30.Elements"
-             mc:Ignorable="d" MaxWidth="800px">
+             mc:Ignorable="d"  MaxWidth="800px">
     <Border Background="#F4F4FB" CornerRadius="20" Margin="0,0,0,30">
         <Grid>
             <Grid.RowDefinitions>
@@ -13,17 +13,14 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Vertical" Margin="15,15,15,20">
-                <TextBlock Text="ID покупателя:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
-                <ComboBox Margin="0,5,0,0" x:Name="CustomersID" IsEnabled="False"/>
+                <TextBlock Text="Полное имя:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="FullName" IsEnabled="False"/>
 
-                <TextBlock Text="ID сотрудника:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
-                <ComboBox Margin="0,5,0,0" x:Name="EmployeeID" IsEnabled="False"/>
+                <TextBlock Text="Опыт работы:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="Experience" IsEnabled="False"/>
 
-                <TextBlock Text="ID автомобиля:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
-                <ComboBox Margin="0,5,0,0" x:Name="CarID" IsEnabled="False"/>
-
-                <TextBlock Text="Дата продажи:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
-                <DatePicker Margin="0,5,0,0" x:Name="DateSale" IsEnabled="False"/>
+                <TextBlock Text="Зарплата:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox Margin="0,5,0,0" x:Name="Salary" IsEnabled="False"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="15,5,15,10" HorizontalAlignment="Center">

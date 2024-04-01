@@ -119,11 +119,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Elements\Sales.xaml">
+    <Page Include="Elements\Employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Elements\Staff.xaml">
+    <Page Include="Elements\Sales.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,7 +140,7 @@
     <Compile Include="Classes\Cars.cs" />
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\Sales.cs" />
-    <Compile Include="Classes\Staff.cs" />
+    <Compile Include="Classes\Employees.cs" />
     <Compile Include="Elements\CarBrands.xaml.cs">
       <DependentUpon>CarBrands.xaml</DependentUpon>
     </Compile>
@@ -150,11 +150,11 @@
     <Compile Include="Elements\Customers.xaml.cs">
       <DependentUpon>Customers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Elements\Employees.xaml.cs">
+      <DependentUpon>Employees.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Elements\Sales.xaml.cs">
       <DependentUpon>Sales.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Elements\Staff.xaml.cs">
-      <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
