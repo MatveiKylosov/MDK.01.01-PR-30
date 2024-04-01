@@ -39,7 +39,7 @@ namespace MDK._01._01_PR_30.Elements
                 PassportDetails.Text = customers.PassportDetails;
                 Address.Text = customers.Address;
                 City.Text = customers.city;
-                DateOfBirth.Text = customers.DateOfBirth.ToString();
+                DateOfBirth.Text = customers.DateOfBirth.ToString("dd.MM.yyyy");
 
                 Man.IsChecked = customers.Gender;
                 Woman.IsChecked = !customers.Gender;
@@ -82,23 +82,18 @@ namespace MDK._01._01_PR_30.Elements
 
         bool CheckEdit()
         {
+
             if (edit)
             {
-                if (customers != null && MainWindow.main.cars.Any(x => x.Stamp == this.customers.FullName))
-                {
-                    MessageBox.Show("Эта запись используется в других таблицах!\nЧтобы изменить название бреда удалите записи из других таблиц, где используется эта запись.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return false;
-                }
-
                 if (string.IsNullOrEmpty(FullName.Text) || FullName.Text.Length > 50)
                 {
-                    MessageBox.Show("Полное имя должно быть больше 0 и меньше 50 символов!", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Полное имя должно быть больше 0 и меньше 250 символов!", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
 
-                if (new Regex(@"^\d{4} \d{6}$").IsMatch(PassportDetails.Text))
+                if (!new Regex(@"^\d{4} \d{6}$").IsMatch(PassportDetails.Text))
                 {
-                    MessageBox.Show("Паспортные данные должны быть больше 0 и меньше 250 символов!", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Паспортные данные должны быть в формате \"xxxx xxxxxx\"!", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
 
@@ -125,6 +120,7 @@ namespace MDK._01._01_PR_30.Elements
                     MessageBox.Show("Укажите пол!", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
+
                 FullName.IsEnabled = PassportDetails.IsEnabled = Address.IsEnabled = City.IsEnabled = DateOfBirth.IsEnabled = Gender.IsEnabled = false;
 
                 CancelRemoveButton.Content = (customers != null ? "Удалить" : "Стереть");
@@ -172,11 +168,14 @@ namespace MDK._01._01_PR_30.Elements
             }
             else
             {
-                if (MainWindow.main.cars.Any(x => x.Stamp == this.customers.FullName))
+                if (MainWindow.main.sales.Any(x => x.CustomersID == this.customers.CustomersID ))
                 {
                     MessageBox.Show("Эта запись используется в других таблицах!\nЧтобы удалить эту запись сначала удалите записи из других таблиц, где используется эта запись.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
+
+                if (MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "Внимание.", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                    return;
 
                 customers.Delete();
                 MainWindow.main.CustomersClick(null, null);

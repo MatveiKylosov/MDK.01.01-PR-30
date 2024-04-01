@@ -1,5 +1,4 @@
-﻿using Org.BouncyCastle.Pqc.Crypto.Falcon;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,17 +32,6 @@ namespace MDK._01._01_PR_30
         {
             InitializeComponent();
             main = this;
-
-            UpdateDate();
-        }
-
-        void UpdateDate()
-        {
-            carBrands = Classes.CarBrands.GetAll;
-            cars = Classes.Cars.GetAll;
-            customers = Classes.Customers.GetAll;
-            employees = Classes.Employees.GetAll;
-            sales = Classes.Sales.GetAll;
         }
 
         public void CarBrandsOpenClick(object sender, RoutedEventArgs e)
@@ -51,8 +39,8 @@ namespace MDK._01._01_PR_30
             carBrands = Classes.CarBrands.GetAll;
             ElementsPanel.Children.Clear();
 
-            if(carBrands == null)
-                MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);        
+            if (carBrands == null || carBrands == null)
+                MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
                 ElementsPanel.Children.Add(new Elements.CarBrands(null, admin));
@@ -65,9 +53,11 @@ namespace MDK._01._01_PR_30
         {
             cars = Classes.Cars.GetAll;
             carBrands = Classes.CarBrands.GetAll;
+            sales = Classes.Sales.GetAll;
+
             ElementsPanel.Children.Clear();
 
-            if(cars == null)
+            if (cars == null || sales == null || carBrands == null)
                 MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
@@ -80,9 +70,11 @@ namespace MDK._01._01_PR_30
         public void CustomersClick(object sender, RoutedEventArgs e)
         {
             customers = Classes.Customers.GetAll;
+            sales = Classes.Sales.GetAll;
+
             ElementsPanel.Children.Clear();
 
-            if (customers == null)
+            if (customers == null || sales == null)
                 MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
@@ -94,12 +86,37 @@ namespace MDK._01._01_PR_30
 
         public void SalesClick(object sender, RoutedEventArgs e)
         {
+            cars = Classes.Cars.GetAll;
+            customers = Classes.Customers.GetAll;
+            employees = Classes.Employees.GetAll;
+            sales = Classes.Sales.GetAll;
 
+
+            ElementsPanel.Children.Clear();
+            if (cars == null ||  customers == null || employees == null || sales == null)
+                MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                ElementsPanel.Children.Add(new Elements.Sales(null, admin));
+                foreach (var x in sales)
+                    ElementsPanel.Children.Add(new Elements.Sales(x, admin));
+            }
         }
 
         public void EmployeesClick(object sender, RoutedEventArgs e)
         {
+            employees = Classes.Employees.GetAll;
+            sales = Classes.Sales.GetAll;
+            ElementsPanel.Children.Clear();
 
+            if (sales == null || employees == null)
+                MessageBox.Show("Не удалось подключиться к базе данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                ElementsPanel.Children.Add(new Elements.Employees(null, admin));
+                foreach (var x in employees)
+                    ElementsPanel.Children.Add(new Elements.Employees(x, admin));
+            }
         }
     }
 }

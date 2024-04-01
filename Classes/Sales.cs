@@ -77,7 +77,7 @@ namespace MDK._01._01_PR_30.Classes
                 {"@CarID", CarID},
                 {"@DateSale", DateSale}
             };
-            return Connection.ExecuteNonQuery("INSERT INTO Sales (SaleID, CustomersID, EmployeeID, CarID, DateSale) VALUES (@SaleID, @CustomersID, @EmployeeID, @CarID, @DateSale)", parameters);
+            return Connection.ExecuteNonQuery("INSERT INTO Sales (CustomersID, EmployeeID, CarID, DateSale) VALUES (@CustomersID, @EmployeeID, @CarID, @DateSale)", parameters);
         }
 
         public bool Delete()

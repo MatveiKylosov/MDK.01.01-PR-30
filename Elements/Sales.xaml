@@ -13,13 +13,13 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Vertical" Margin="15,15,15,20">
-                <TextBlock Text="ID покупателя:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBlock Text="Покупатель:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
                 <ComboBox Margin="0,5,0,0" x:Name="CustomersID" IsEnabled="False"/>
 
-                <TextBlock Text="ID сотрудника:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBlock Text="Сотрудник:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
                 <ComboBox Margin="0,5,0,0" x:Name="EmployeeID" IsEnabled="False"/>
 
-                <TextBlock Text="ID автомобиля:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBlock Text="Автомобил:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
                 <ComboBox Margin="0,5,0,0" x:Name="CarID" IsEnabled="False"/>
 
                 <TextBlock Text="Дата продажи:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>

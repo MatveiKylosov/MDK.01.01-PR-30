@@ -75,7 +75,7 @@ namespace MDK._01._01_PR_30.Elements
         {
             if (edit)
             {
-                if (carBrands != null && MainWindow.main.cars.Any(x => x.Stamp == this.carBrands.BrandName))
+                if (carBrands != null && BrandName.Text != this.carBrands.BrandName && MainWindow.main.cars.Any(x => x.Stamp == this.carBrands.BrandName))
                 {
                     MessageBox.Show("Эта запись используется в других таблицах!\nЧтобы изменить название бреда удалите записи из других таблиц, где используется эта запись.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
@@ -147,6 +147,9 @@ namespace MDK._01._01_PR_30.Elements
                     MessageBox.Show("Эта запись используется в других таблицах!\nЧтобы удалить эту запись сначала удалите записи из других таблиц, где используется эта запись.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
+
+                if (MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "Внимание.", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                    return;
 
                 carBrands.Delete();
                 MainWindow.main.CarBrandsOpenClick(null, null);

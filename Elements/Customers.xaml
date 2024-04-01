@@ -26,7 +26,7 @@
                 <TextBox Margin="0,5,0,0" x:Name="City" IsEnabled="False"/>
 
                 <TextBlock Text="Дата рождения:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
-                <TextBox Margin="0,5,0,0" x:Name="DateOfBirth" IsEnabled="False"/>
+                <DatePicker Margin="0,5,0,0" x:Name="DateOfBirth" IsEnabled="False"/>
 
                 <TextBlock Text="Пол:" Foreground="#39AFEA" FontSize="15px" FontWeight="Bold" Margin="0,10,0,0"/>
                 <GroupBox x:Name="Gender" IsEnabled="False">

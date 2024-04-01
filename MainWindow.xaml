@@ -28,7 +28,7 @@
                     <Button Height="50" Width="50" Margin="5" Click="CarsClick"             Background="#39AFEA"/>
                     <Button Height="50" Width="50" Margin="5" Click="CustomersClick"        Background="#39AFEA"/>
                     <Button Height="50" Width="50" Margin="5" Click="SalesClick"            Background="#39AFEA"/>
-                    <Button Height="50" Width="50" Margin="5" Click="StaffClick"            Background="#39AFEA"/>
+                    <Button Height="50" Width="50" Margin="5" Click="EmployeesClick"        Background="#39AFEA"/>
                 </StackPanel>
 
                 <Button  Grid.Row="1" Margin="10,0,10,15" Height="50" Width="50" Background="#39AFEA" >
@@ -37,8 +37,8 @@
             </Grid>
         </Border>
 
-        <ScrollViewer  Grid.Column="1" Margin="15,15,30,15" VerticalScrollBarVisibility="Hidden">
-            <StackPanel x:Name="ElementsPanel" Orientation="Vertical" />
+        <ScrollViewer  Grid.Column="1" Margin="15,15,30,15" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ElementsPanel" Orientation="Vertical" Margin="0,0,30,0"/>
         </ScrollViewer>
     </Grid>
 </Window>

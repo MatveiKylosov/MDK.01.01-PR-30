@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -92,9 +93,9 @@ namespace MDK._01._01_PR_30.Elements
                     return false;
                 }
 
-                if (!int.TryParse(YearProduction.Text, out int year))
+                if (!new Regex(@"^\d{4}$").IsMatch(YearProduction.Text))
                 {
-                    MessageBox.Show("Дата производства ", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Укажите корректный год производства. ", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
 
@@ -164,6 +165,9 @@ namespace MDK._01._01_PR_30.Elements
                     MessageBox.Show("Эта запись используется в других таблицах!\nЧтобы удалить эту запись сначала удалите записи из других таблиц, где используется эта запись.", "Ошибка.", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
+
+                if (MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "Внимание.", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                    return;
 
                 car.Delete();
                 MainWindow.main.CarsClick(null, null);

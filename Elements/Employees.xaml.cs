@@ -136,6 +136,9 @@ namespace MDK._01._01_PR_30.Elements
                     return;
                 }
 
+                if (MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "Внимание.", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                    return;
+
                 employee.Delete();
                 MainWindow.main.EmployeesClick(null, null);
             }
