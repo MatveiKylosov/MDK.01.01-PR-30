@@ -63,7 +63,7 @@ namespace MDK._01._01_PR_30.Elements
             {
                 if (Classes.CarBrands.Insert(BrandName.Text, CountryOrigin.Text, ManufacturerFactory.Text, Address.Text))
                 {
-                    MainWindow.main.CarBrandsOpenClick(null, null);
+                    MainWindow.main.CarBrandsClick(null, null);
                     MessageBox.Show("Данные были успешно добавлены!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
@@ -152,7 +152,7 @@ namespace MDK._01._01_PR_30.Elements
                     return;
 
                 carBrands.Delete();
-                MainWindow.main.CarBrandsOpenClick(null, null);
+                MainWindow.main.CarBrandsClick(null, null);
             }
         }
     }

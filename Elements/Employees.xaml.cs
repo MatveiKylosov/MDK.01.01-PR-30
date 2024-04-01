@@ -22,13 +22,10 @@ namespace MDK._01._01_PR_30.Elements
     {
         Classes.Employees employee;
         bool edit = false;
-        public Employees(Classes.Employees employee, bool admin = false)
+        public Employees(Classes.Employees employee)
         {
             InitializeComponent();
             this.employee = employee;
-
-            if (!admin)
-                ButtonRow.Height = new GridLength(0);
 
             if (employee != null)
             {

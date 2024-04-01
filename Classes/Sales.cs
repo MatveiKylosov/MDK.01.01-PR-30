@@ -49,6 +49,7 @@ namespace MDK._01._01_PR_30.Classes
 
         public Sales(int SaleID, int CustomersID, int EmployeeID, int CarID, DateTime DateSale)
         {
+            this.SaleID = SaleID;
             this.CustomersID = CustomersID;
             this.EmployeeID = EmployeeID;
             this.CarID = CarID;
@@ -65,7 +66,8 @@ namespace MDK._01._01_PR_30.Classes
                 {"@CarID", CarID},
                 {"@DateSale", DateSale}
             };
-            return Connection.ExecuteNonQuery("UPDATE Sales SET SaleID = @SaleID, CustomersID = @CustomersID, EmployeeID = @EmployeeID, CarID = @CarID, DateSale = @DateSale WHERE SaleID = @SaleID", parameters);
+            
+            return Connection.ExecuteNonQuery("UPDATE Sales SET CustomersID = @CustomersID, EmployeeID = @EmployeeID, CarID = @CarID, DateSale = @DateSale WHERE SaleID = @SaleID", parameters);
         }
 
         static public bool Insert(int CustomersID, int EmployeeID, int CarID, DateTime DateSale)
@@ -77,6 +79,7 @@ namespace MDK._01._01_PR_30.Classes
                 {"@CarID", CarID},
                 {"@DateSale", DateSale}
             };
+            
             return Connection.ExecuteNonQuery("INSERT INTO Sales (CustomersID, EmployeeID, CarID, DateSale) VALUES (@CustomersID, @EmployeeID, @CarID, @DateSale)", parameters);
         }
 

@@ -189,8 +189,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icon\admin.png" />
     <Resource Include="Icon\brand.png" />
+    <Resource Include="Icon\auto.png" />
+    <Resource Include="Icon\сustomer.png" />
+    <Resource Include="Icon\employee.png" />
+    <Resource Include="Icon\sale.png" />
+    <Resource Include="Icon\logout.png" />
     <Content Include="SQL queries\Create Table.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
