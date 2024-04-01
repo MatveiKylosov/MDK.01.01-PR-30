@@ -18,9 +18,6 @@
             </Grid.ColumnDefinitions>
 
             <Border Background="#F4F4FB" Margin="15" CornerRadius="20" Grid.Row="1" Grid.Column="0">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                </Border.Effect>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -28,42 +25,24 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Margin="10,15,10,10">
-                        <Button Height="50" Width="50" Margin="5" Click="CarBrandsClick"    Background="#39AFEA">
-                            <Button.Effect>
-                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                            </Button.Effect>
+                        <Button Style="{StaticResource RoundedButton}" Height="50" Width="50" Margin="5" Click="CarBrandsClick"    Background="#39AFEA">
                             <Image Source="Icon/brand.png" Width="40"/>
                         </Button>
-                        <Button Height="50" Width="50" Margin="5" Click="CarsClick"             Background="#39AFEA">
-                            <Button.Effect>
-                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                            </Button.Effect>
+                        <Button Style="{StaticResource RoundedButton}" Height="50" Width="50" Margin="5" Click="CarsClick"             Background="#39AFEA">
                             <Image Source="Icon/auto.png" Width="40"/>
                         </Button>
-                        <Button Height="50" Width="50" Margin="5" Click="CustomersClick"        Background="#39AFEA">
-                            <Button.Effect>
-                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                            </Button.Effect>
+                        <Button Style="{StaticResource RoundedButton}" Height="50" Width="50" Margin="5" Click="CustomersClick"        Background="#39AFEA">
                             <Image Source="Icon/сustomer.png" Width="40"/>
                         </Button>
-                        <Button Height="50" Width="50" Margin="5" Click="EmployeesClick"        Background="#39AFEA" x:Name="EmployeesBTN">
-                            <Button.Effect>
-                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                            </Button.Effect>
+                        <Button Style="{StaticResource RoundedButton}" Height="50" Width="50" Margin="5" Click="EmployeesClick"        Background="#39AFEA" x:Name="EmployeesBTN">
                             <Image Source="Icon/employee.png" Width="40"/>
                         </Button>
-                        <Button Height="50" Width="50" Margin="5" Click="SalesClick"            Background="#39AFEA">
-                            <Button.Effect>
-                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                            </Button.Effect>
+                        <Button Style="{StaticResource RoundedButton}" Height="50" Width="50" Margin="5" Click="SalesClick"            Background="#39AFEA">
                             <Image Source="Icon/sale.png" Width="40"/>
                         </Button>
                     </StackPanel>
 
-                    <Button  Grid.Row="1" Margin="10,0,10,15" Height="50" Width="50" Background="#39AFEA" Click="LogOut_Click">
-                        <Button.Effect>
-                            <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                        </Button.Effect>
+                    <Button Style="{StaticResource RoundedButton}"  Grid.Row="1" Margin="10,0,10,15" Height="50" Width="50" Background="#39AFEA" Click="LogOut_Click">
                         <Image Source="Icon/logout.png" Width="40"/>
                     </Button>
                 </Grid>
@@ -76,19 +55,13 @@
 
         <Grid x:Name="Login" Background="#5e69ee">
             <Border Background="#F4F4FB" Margin="15" CornerRadius="20">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                </Border.Effect>
                 <Grid>
                     <TextBlock Text="Полное имя:" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#39AFEA" FontSize="16px" FontWeight="Bold" Margin="0,-70,0,0"/>
 
-                    <TextBox x:Name="FullName" Width="300px" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#39AFEA" FontSize="16px" FontWeight="Bold" Margin="0,0,0,0"/>
+                    <TextBox x:Name="FullName" Width="300px" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#F4F4FB" Foreground="#39AFEA" FontSize="14px" FontWeight="Bold" Margin="0,0,0,0"/>
 
-                    <Button Width="130px" Height="30px" Background="#39AFEA" Content="Войти" Foreground="White" FontSize="16px" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0"
+                    <Button Style="{StaticResource RoundedButton}" Width="130px" Height="30px" Background="#39AFEA" Content="Войти" Foreground="White" FontSize="16px" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0"
                             Click="LogIn_Click">
-                        <Button.Effect>
-                            <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
-                        </Button.Effect>
                     </Button>
                 </Grid>
             </Border>

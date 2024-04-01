@@ -4,6 +4,63 @@
              xmlns:local="clr-namespace:MDK._01._01_PR_30"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="RoundedButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.3" BlurRadius="4"/>
+                            </Border.Effect>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#5e69ee" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="BorderShadow" TargetType="Border">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.3" BlurRadius="5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#F4F4FB"/>
+            <Setter Property="Foreground" Value="#39AFEA"/>
+            <Setter Property="FontSize" Value="14px"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="#39AFEA"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#DBDBE1"/>
+                    <Setter Property="Foreground" Value="#339DD2"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
     </Application.Resources>
 </Application>

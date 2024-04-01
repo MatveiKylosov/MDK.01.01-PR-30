@@ -197,5 +197,6 @@
     <Resource Include="Icon\logout.png" />
     <Content Include="SQL queries\Create Table.sql" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
