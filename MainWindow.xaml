@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MDK._01._01_PR_30"
         mc:Ignorable="d"
-        Title="MainWindow" Height="470" Width="800" MinHeight="470" MinWidth="800">
+        Title="MainWindow" MinHeight="530" MinWidth="800" Height="530" Width="800">
     <!--Main: #5e69ee-->
     <!--Secondary: #F4F4FB-->
     <!--Accent: #39AFEA-->
@@ -39,6 +39,10 @@
                         </Button>
                         <Button Style="{StaticResource RoundedButton}" Height="50" Width="50" Margin="5" Click="SalesClick"            Background="#39AFEA">
                             <Image Source="Icon/sale.png" Width="40"/>
+                        </Button>
+
+                        <Button Style="{StaticResource RoundedButton}" Height="50" Width="50" Margin="5" Click="export" x:Name="ExportBTN"          Background="#39AFEA">
+                            <Image Source="Icon/export.png" Width="40"/>
                         </Button>
                     </StackPanel>
 

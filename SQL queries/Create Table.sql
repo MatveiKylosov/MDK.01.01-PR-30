@@ -68,16 +68,16 @@ INSERT INTO Cars (Name, Stamp, YearProduction, Colour, Category, Price) VALUES
 
 -- Customers
 INSERT INTO Customers (FullName, PassportDetails, Address, City, DateOfBirth, Gender) VALUES
-('John Doe', '123456789', '123 Main St', 'New York', '1980-01-01', TRUE),
-('Jane Smith', '987654321', '456 Maple Ave', 'Los Angeles', '1985-02-02', FALSE),
-('Alice Johnson', '234567890', '789 Oak St', 'Chicago', '1990-03-03', FALSE),
-('Bob Williams', '876543210', '321 Pine St', 'Houston', '1995-04-04', TRUE),
-('Charlie Brown', '345678901', '654 Elm St', 'Philadelphia', '2000-05-05', TRUE),
-('Diana Davis', '765432109', '987 Willow St', 'Phoenix', '1995-06-06', FALSE),
-('Ethan Evans', '456789012', '321 Cedar St', 'San Antonio', '1990-07-07', TRUE),
-('Fiona Foster', '654321098', '789 Birch St', 'San Diego', '1985-08-08', FALSE),
-('George Green', '567890123', '456 Spruce St', 'Dallas', '1980-09-09', TRUE),
-('Hannah Harris', '543210987', '123 Redwood St', 'San Jose', '1975-10-10', FALSE);
+('John Doe', '1234 123456', '123 Main St', 'New York', '1980-01-01', TRUE),
+('Jane Smith', '1234 123456', '456 Maple Ave', 'Los Angeles', '1985-02-02', FALSE),
+('Alice Johnson', '1234 123456', '789 Oak St', 'Chicago', '1990-03-03', FALSE),
+('Bob Williams', '1234 123456', '321 Pine St', 'Houston', '1995-04-04', TRUE),
+('Charlie Brown', '1234 123456', '654 Elm St', 'Philadelphia', '2000-05-05', TRUE),
+('Diana Davis', '1234 123456', '987 Willow St', 'Phoenix', '1995-06-06', FALSE),
+('Ethan Evans', '1234 123456', '321 Cedar St', 'San Antonio', '1990-07-07', TRUE),
+('Fiona Foster', '1234 123456', '789 Birch St', 'San Diego', '1985-08-08', FALSE),
+('George Green', '1234 123456', '456 Spruce St', 'Dallas', '1980-09-09', TRUE),
+('Hannah Harris', '1234 123456', '123 Redwood St', 'San Jose', '1975-10-10', FALSE);
 
 -- Employees
 INSERT INTO Employees (FullName, Experience, Salary) VALUES
