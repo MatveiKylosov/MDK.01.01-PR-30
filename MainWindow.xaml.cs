@@ -32,6 +32,7 @@ namespace MDK._01._01_PR_30
         public List<Classes.Sales> sales;
 
         Classes.Customers customer;
+        Classes.Employees employee;
 
         bool admin = true;
 
@@ -143,7 +144,7 @@ namespace MDK._01._01_PR_30
             {
                 ElementsPanel.Children.Add(new Elements.Employees(null));
                 foreach (var x in employees)
-                    ElementsPanel.Children.Add(new Elements.Employees(x));
+                    ElementsPanel.Children.Add(new Elements.Employees(x, x.EmployeeID == employee.EmployeeID));
             }
         }
 
@@ -152,8 +153,9 @@ namespace MDK._01._01_PR_30
             customers = Classes.Customers.GetAll;
             employees = Classes.Employees.GetAll;
 
-            customer = customers.FirstOrDefault(x => x.FullName == FullName.Text);
-            admin = employees.FirstOrDefault(x => x.FullName == FullName.Text) != null;
+            customer = customers.FirstOrDefault(x => x.FullName == FullName.Text && x.Password == Password.Password);
+            employee = employees.FirstOrDefault(x => x.FullName == FullName.Text && x.Password == Password.Password);
+            admin = employee != null;
 
             if(admin || customer != null)
             {

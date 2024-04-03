@@ -13,7 +13,7 @@ namespace MDK._01._01_PR_30.Classes
         public string   FullName;
         public int      Experience;
         public decimal  Salary;
-
+        public string   Password;
         static public List<Employees> GetAll
         {
             get
@@ -34,7 +34,8 @@ namespace MDK._01._01_PR_30.Classes
                                     reader.GetInt32("EmployeeID"),
                                     reader.GetString("FullName"),
                                     reader.GetInt32("Experience"),
-                                    reader.GetDecimal("Salary")
+                                    reader.GetDecimal("Salary"),
+                                    reader.GetString("Password")
                                     )
                                 );
                         }
@@ -45,12 +46,13 @@ namespace MDK._01._01_PR_30.Classes
             }
         }
 
-        public Employees(int EmployeeID, string FullName, int Experience, decimal Salary)
+        public Employees(int EmployeeID, string FullName, int Experience, decimal Salary, string password)
         {
             this.EmployeeID = EmployeeID;
             this.FullName = FullName;
             this.Experience = Experience;
             this.Salary = Salary;
+            this.Password = password;
         }
 
         public bool Update(string FullName, int Experience, decimal Salary)

@@ -1,0 +1,5 @@
+DROP TABLE Sales;
+DROP TABLE Employees;
+DROP TABLE Customers;
+DROP TABLE Cars;
+DROP TABLE CarBrands;

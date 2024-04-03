@@ -21,13 +21,15 @@ CREATE TABLE Customers (
     Address VARCHAR(255),
     City VARCHAR(255),
     DateOfBirth DATE,
-    Gender BOOLEAN
+    Gender BOOLEAN,
+    Password VARCHAR(255)
 );
 CREATE TABLE Employees (
     EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
     FullName VARCHAR(255),
     Experience INT,
-    Salary DECIMAL(10, 2)
+    Salary DECIMAL(10, 2),
+    Password VARCHAR(255)
 );
 CREATE TABLE Sales (
     SaleID INT AUTO_INCREMENT PRIMARY KEY,
@@ -67,30 +69,30 @@ INSERT INTO Cars (Name, Stamp, YearProduction, Colour, Category, Price) VALUES
 ('Passat', 'Volkswagen', 2022, 'Silver', 'Sedan', 22000.00);
 
 -- Customers
-INSERT INTO Customers (FullName, PassportDetails, Address, City, DateOfBirth, Gender) VALUES
-('John Doe', '1234 123456', '123 Main St', 'New York', '1980-01-01', TRUE),
-('Jane Smith', '1234 123456', '456 Maple Ave', 'Los Angeles', '1985-02-02', FALSE),
-('Alice Johnson', '1234 123456', '789 Oak St', 'Chicago', '1990-03-03', FALSE),
-('Bob Williams', '1234 123456', '321 Pine St', 'Houston', '1995-04-04', TRUE),
-('Charlie Brown', '1234 123456', '654 Elm St', 'Philadelphia', '2000-05-05', TRUE),
-('Diana Davis', '1234 123456', '987 Willow St', 'Phoenix', '1995-06-06', FALSE),
-('Ethan Evans', '1234 123456', '321 Cedar St', 'San Antonio', '1990-07-07', TRUE),
-('Fiona Foster', '1234 123456', '789 Birch St', 'San Diego', '1985-08-08', FALSE),
-('George Green', '1234 123456', '456 Spruce St', 'Dallas', '1980-09-09', TRUE),
-('Hannah Harris', '1234 123456', '123 Redwood St', 'San Jose', '1975-10-10', FALSE);
+INSERT INTO Customers (FullName, PassportDetails, Address, City, DateOfBirth, Gender, Password) VALUES
+('John Doe', '1234 123456', '123 Main St', 'New York', '1980-01-01', TRUE, 'Asdfg123'),
+('Jane Smith', '1234 123456', '456 Maple Ave', 'Los Angeles', '1985-02-02', FALSE, 'Asdfg123'),
+('Alice Johnson', '1234 123456', '789 Oak St', 'Chicago', '1990-03-03', FALSE, 'Asdfg123'),
+('Bob Williams', '1234 123456', '321 Pine St', 'Houston', '1995-04-04', TRUE, 'Asdfg123'),
+('Charlie Brown', '1234 123456', '654 Elm St', 'Philadelphia', '2000-05-05', TRUE, 'Asdfg123'),
+('Diana Davis', '1234 123456', '987 Willow St', 'Phoenix', '1995-06-06', FALSE, 'Asdfg123'),
+('Ethan Evans', '1234 123456', '321 Cedar St', 'San Antonio', '1990-07-07', TRUE, 'Asdfg123'),
+('Fiona Foster', '1234 123456', '789 Birch St', 'San Diego', '1985-08-08', FALSE, 'Asdfg123'),
+('George Green', '1234 123456', '456 Spruce St', 'Dallas', '1980-09-09', TRUE, 'Asdfg123'),
+('Hannah Harris', '1234 123456', '123 Redwood St', 'San Jose', '1975-10-10', FALSE, 'Asdfg123');
 
 -- Employees
-INSERT INTO Employees (FullName, Experience, Salary) VALUES
-('Alice Johnson', 5, 50000.00),
-('Bob Williams', 10, 60000.00),
-('Charlie Brown', 3, 40000.00),
-('Diana Davis', 7, 55000.00),
-('Ethan Evans', 12, 65000.00),
-('Fiona Foster', 4, 45000.00),
-('George Green', 8, 58000.00),
-('Hannah Harris', 11, 62000.00),
-('Ivan Ivanov', 6, 52000.00),
-('Julia Johnson', 9, 59000.00);
+INSERT INTO Employees (FullName, Experience, Salary, Password) VALUES
+('Alice Johnson', 5, 50000.00, 'Asdfg123'),
+('Bob Williams', 10, 60000.00, 'Asdfg123'),
+('Charlie Brown', 3, 40000.00, 'Asdfg123'),
+('Diana Davis', 7, 55000.00, 'Asdfg123'),
+('Ethan Evans', 12, 65000.00, 'Asdfg123'),
+('Fiona Foster', 4, 45000.00, 'Asdfg123'),
+('George Green', 8, 58000.00, 'Asdfg123'),
+('Hannah Harris', 11, 62000.00, 'Asdfg123'),
+('Ivan Ivanov', 6, 52000.00, 'Asdfg123'),
+('Julia Johnson', 9, 59000.00, 'Asdfg123');
 
 -- Sales
 INSERT INTO Sales (CustomersID, EmployeeID, CarID, DateSale) VALUES

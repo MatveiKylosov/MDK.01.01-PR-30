@@ -16,6 +16,7 @@ namespace MDK._01._01_PR_30.Classes
         public string city;
         public DateTime DateOfBirth; 
         public bool Gender;
+        public string Password;
 
         static public List<Customers> GetAll
         {
@@ -40,7 +41,8 @@ namespace MDK._01._01_PR_30.Classes
                                     reader.GetString("Address"),
                                     reader.GetString("city"),
                                     reader.GetDateTime("DateOfBirth"),
-                                    reader.GetBoolean("Gender")
+                                    reader.GetBoolean("Gender"),
+                                    reader.GetString("Password")
                                     )
                                 );
                         }
@@ -51,7 +53,7 @@ namespace MDK._01._01_PR_30.Classes
             }
         }
 
-        public Customers(int CustomersID, string FullName, string PassportDetails, string Address, string city, DateTime DateOfBirth, bool Gender)
+        public Customers(int CustomersID, string FullName, string PassportDetails, string Address, string city, DateTime DateOfBirth, bool Gender, string password)
         {
             this.CustomersID = CustomersID;
             this.FullName = FullName;
@@ -60,6 +62,7 @@ namespace MDK._01._01_PR_30.Classes
             this.city = city;
             this.DateOfBirth = DateOfBirth;
             this.Gender = Gender;
+            this.Password = password;
         }
 
         public bool Update(string FullName, string PassportDetails, string Address, string city, DateTime DateOfBirth, bool Gender)

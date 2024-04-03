@@ -60,11 +60,13 @@
         <Grid x:Name="Login" Background="#5e69ee">
             <Border Background="#F4F4FB" Margin="15" CornerRadius="20">
                 <Grid>
-                    <TextBlock Text="Полное имя:" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#39AFEA" FontSize="16px" FontWeight="Bold" Margin="0,-70,0,0"/>
+                    <TextBlock Text="Полное имя:" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#39AFEA" FontSize="16px" FontWeight="Bold" Margin="0,-170,0,0"/>
+                    <TextBox x:Name="FullName" Width="300px" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#F4F4FB" Foreground="#39AFEA" FontSize="14px" FontWeight="Bold" Margin="0,-100,0,0"/>
 
-                    <TextBox x:Name="FullName" Width="300px" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#F4F4FB" Foreground="#39AFEA" FontSize="14px" FontWeight="Bold" Margin="0,0,0,0"/>
+                    <TextBlock Text="Пароль" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#39AFEA" FontSize="16px" FontWeight="Bold" Margin="0,-20,0,0"/>
+                    <PasswordBox x:Name="Password" Width="300px" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#F4F4FB" Foreground="#39AFEA" FontSize="14px" FontWeight="Bold" Margin="0,50,0,0"/>
 
-                    <Button Style="{StaticResource RoundedButton}" Width="130px" Height="30px" Background="#39AFEA" Content="Войти" Foreground="White" FontSize="16px" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0"
+                    <Button Style="{StaticResource RoundedButton}" Width="130px" Height="30px" Background="#39AFEA" Content="Войти" Foreground="White" FontSize="16px" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,150,0,0"
                             Click="LogIn_Click">
                     </Button>
                 </Grid>

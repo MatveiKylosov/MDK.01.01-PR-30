@@ -206,6 +206,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SQL queries\Drop.sql" />
     <Resource Include="Icon\brand.png" />
     <Resource Include="Icon\auto.png" />
     <Resource Include="Icon\сustomer.png" />
